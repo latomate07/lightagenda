@@ -6,6 +6,8 @@ LightAgenda est une application de gestion d'agenda simplifiée, développée av
 
 </div>
 
+<img width="794" alt="image" src="art/screen.png">
+
 ## À propos
 
 Ce projet utilise [ViteJS](https://vitejs.dev) pour la construction et le service du front-end (alimenté par Vue). ViteJS offre un rechargement à chaud (HMR) pour faciliter et accélérer le développement ⚡
