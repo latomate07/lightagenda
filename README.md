@@ -1,77 +1,68 @@
 <div align="center"> 
 
-# Electron Vue Template
-  
-<img width="794" alt="image" src="https://user-images.githubusercontent.com/32544586/222748627-ee10c9a6-70d2-4e21-b23f-001dd8ec7238.png">
+# LightAgenda - Projet E5 BTS
 
-A simple starter template for a **Vue3** + **Electron** TypeScript based application, including **ViteJS** and **Electron Builder**.
+LightAgenda est une application de gestion d'agenda simplifiée, développée avec **ElectronJS** et **VueJS**
+
 </div>
 
-## About
+## À propos
 
-This template utilizes [ViteJS](https://vitejs.dev) for building and serving your (Vue powered) front-end process, it provides Hot Reloads (HMR) to make development fast and easy ⚡ 
+Ce projet utilise [ViteJS](https://vitejs.dev) pour la construction et le service du front-end (alimenté par Vue). ViteJS offre un rechargement à chaud (HMR) pour faciliter et accélérer le développement ⚡
 
-Building the Electron (main) process is done with [Electron Builder](https://www.electron.build/), which makes your application easily distributable and supports cross-platform compilation 😎
+## Fonctionnalités
 
-## Getting started
+LightAgenda permet à l'utilisateur de visualiser un calendrier. En cliquant sur une date, l'utilisateur peut ajouter un événement à cette date. L'interface utilisateur est conçue avec PrimeVue pour offrir une expérience utilisateur moderne et réactive.
 
-Click the green **Use this template** button on top of the repository, and clone your own newly created repository.
+## Prérequis
 
-**Or..**
+Avant de commencer, assurez-vous d'avoir installé les logiciels suivants sur votre machine :
 
-Clone this repository: `git clone git@github.com:Deluze/electron-vue-template.git`
+- [Node.js](https://nodejs.org/) (version 14 ou supérieure)
+- [Git](https://git-scm.com/)
 
+## Installation
 
-### Install dependencies ⏬
+### Cloner le dépôt
+
+SSH:
+`git clone git@github.com:latomate07/lightagenda.git`
+
+HTTPS:
+`git clone https://github.com/latomate07/lightagenda.git`
+
+### Installer les dépendances ⏬
 
 ```bash
 npm install
 ```
 
-### Start developing ⚒️
+### Commencer le développement ⚒️
 
 ```bash
 npm run dev
 ```
 
-## Additional Commands
+## Commandes supplémentaires
 
 ```bash
-npm run dev # starts application with hot reload
-npm run build # builds application, distributable files can be found in "dist" folder
+npm run dev # démarre l'application avec rechargement à chaud
+npm run build # construit l'application, les fichiers distribuables se trouvent dans le dossier "build"
 
-# OR
+# OU
 
-npm run build:win # uses windows as build target
-npm run build:mac # uses mac as build target
-npm run build:linux # uses linux as build target
+npm run build:win # utilise Windows comme cible de construction
+npm run build:mac # utilise macOS comme cible de construction
+npm run build:linux # utilise Linux comme cible de construction
 ```
 
-Optional configuration options can be found in the [Electron Builder CLI docs](https://www.electron.build/cli.html).
-## Project Structure
+Les options de configuration facultatives peuvent être trouvées dans la [documentation CLI d'Electron Builder](https://www.electron.build/cli.html).
+
+## Structure du projet
 
 ```bash
-- scripts/ # all the scripts used to build or serve your application, change as you like.
+- scripts/ # tous les scripts utilisés pour construire ou servir votre application, modifiez-les à votre convenance.
 - src/
-  - main/ # Main thread (Electron application source)
-  - renderer/ # Renderer thread (VueJS application source)
-```
-
-## Using static files
-
-If you have any files that you want to copy over to the app directory after installation, you will need to add those files in your `src/main/static` directory.
-
-Files in said directory are only accessible to the `main` process, similar to `src/renderer/public` only being accessible to the `renderer` process. Besides that, the concept is the same as to what you're used to in your front-end projects.
-
-#### Referencing static files from your main process
-
-```ts
-/* Assumes src/main/static/myFile.txt exists */
-
-import {app} from 'electron';
-import {join} from 'path';
-import {readFileSync} from 'fs';
-
-const path = join(app.getAppPath(), 'static', 'myFile.txt');
-const buffer = readFileSync(path);
+  - main/ # Fil principal (source de l'application Electron)
+  - renderer/ # Fil de rendu (source de l'application VueJS)
 ```
