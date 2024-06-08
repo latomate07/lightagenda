@@ -1,10 +1,11 @@
 import {app, BrowserWindow, ipcMain, session} from 'electron';
 import {join} from 'path';
+import { Event } from './database';
 
 function createWindow () {
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1400,
+    height: 800,
     webPreferences: {
       preload: join(__dirname, 'preload.js'),
       nodeIntegration: false,
@@ -46,6 +47,30 @@ app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 });
 
-ipcMain.on('message', (event, message) => {
-  console.log(message);
-})
+ipcMain.handle('add-event', async (event, eventData) => {
+  const newEvent = await Event.create(eventData);
+  return newEvent;
+});
+
+ipcMain.handle('get-events', async () => {
+  const events = await Event.findAll();
+  return events;
+});
+
+ipcMain.handle('update-event', async (event, updatedEventData) => {
+  const eventToUpdate = await Event.findByPk(updatedEventData.id);
+  if (eventToUpdate) {
+    await eventToUpdate.update(updatedEventData);
+    return eventToUpdate;
+  }
+  return null;
+});
+
+ipcMain.handle('delete-event', async (event, eventId) => {
+  const eventToDelete = await Event.findByPk(eventId);
+  if (eventToDelete) {
+    await eventToDelete.destroy();
+    return true;
+  }
+  return false;
+});

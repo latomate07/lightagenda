@@ -10,7 +10,7 @@
     "build:mac": "node scripts/build.js && electron-builder --mac",
     "build:linux": "node scripts/build.js && electron-builder --linux"
   },
-  "repository": "https://github.com/atomate07/lightagenda",
+  "repository": "https://github.com/latomate07/lightagenda",
   "author": {
     "name": "Tahirou",
     "url": "https://techtahirou.com"
@@ -25,7 +25,9 @@
     "vite": "^4.5.0"
   },
   "dependencies": {
-    "tui-calendar": "^1.15.3",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7",
+    "toast-ui-calendar-vue3": "^0.2.0",
     "vue": "^3.3.8"
   }
 }
