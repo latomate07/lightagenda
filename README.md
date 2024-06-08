@@ -39,17 +39,16 @@ HTTPS:
 npm install
 ```
 
-### Commencer le développement ⚒️
+### Lancer la version locale (sans fichier exécutable) ⚒️
 
 ```bash
 npm run dev
 ```
 
-## Commandes supplémentaires
+### Générer les fichiers exécutables (macOS, Linux, Windows)
 
 ```bash
-npm run dev # démarre l'application avec rechargement à chaud
-npm run build # construit l'application, les fichiers distribuables se trouvent dans le dossier "build"
+npm run build # construit l'application, les fichiers distribuables se trouvent dans le dossier "dist"
 
 # OU
 
@@ -58,12 +57,10 @@ npm run build:mac # utilise macOS comme cible de construction
 npm run build:linux # utilise Linux comme cible de construction
 ```
 
-Les options de configuration facultatives peuvent être trouvées dans la [documentation CLI d'Electron Builder](https://www.electron.build/cli.html).
-
 ## Structure du projet
 
 ```bash
-- scripts/ # tous les scripts utilisés pour construire ou servir votre application, modifiez-les à votre convenance.
+- scripts/ # tous les scripts utilisés pour construire ou servir votre application
 - src/
   - main/ # Fil principal (source de l'application Electron)
   - renderer/ # Fil de rendu (source de l'application VueJS)
