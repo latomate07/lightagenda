@@ -14,7 +14,7 @@ Ce projet utilise [ViteJS](https://vitejs.dev) pour la construction et le servic
 
 ## Fonctionnalités
 
-LightAgenda permet à l'utilisateur de visualiser un calendrier. En cliquant sur une date, l'utilisateur peut ajouter un événement à cette date. L'interface utilisateur est conçue avec PrimeVue pour offrir une expérience utilisateur moderne et réactive.
+LightAgenda permet à l'utilisateur de visualiser un calendrier. En cliquant sur une date, l'utilisateur peut ajouter un événement à cette date. L'interface utilisateur est conçue avec VueJS pour offrir une expérience utilisateur moderne et réactive.
 
 ## Prérequis
 
