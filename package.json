@@ -2,7 +2,7 @@
   "name": "lightagenda",
   "version": "1.0.0",
   "description": "A small agenda desktop app build with electron",
-  "main": "build/main/main.js",
+  "main": "main/main.js",
   "scripts": {
     "dev": "node scripts/dev-server.js",
     "build": "node scripts/build.js && electron-builder",
@@ -19,7 +19,7 @@
     "@vitejs/plugin-vue": "^4.4.1",
     "chalk": "^4.1.2",
     "chokidar": "^3.5.3",
-    "electron": "^27.1.0",
+    "electron": "^24.0.0",
     "electron-builder": "^24.2.1",
     "typescript": "^5.2.2",
     "vite": "^4.5.0"
