@@ -116,7 +116,6 @@ const onBeforeDeleteSchedule = async (event) => {
 
 onMounted(() => {
     calendarInstance = new Calendar(calendarRef.value, {
-        dayNames: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
         usageStatistics: false,
         defaultView: 'week',
         isReadOnly: false,
@@ -135,15 +134,15 @@ onMounted(() => {
         useCreationPopup: true,
         useDetailPopup: true,
         calendars: props.views,
+        week: {
+            daynames: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam']
+        },
         template: {
             time: function (schedule) {
                 return `<strong>${schedule.title}</strong> <br> ${moment(schedule.start.getTime()).format('HH:mm')} - ${moment(schedule.end.getTime()).format('HH:mm')}`;
             },
             monthDayname: function (model) {
-                return '<span class="tui-full-calendar-dayname-name">' + model.label + '</span>';
-            },
-            weekDayname: function (model) {
-                return '<span class="tui-full-calendar-dayname-name">' + model.label + '</span>';
+                return '<span class="tui-full-calendar-dayname-name">' + model.monthName + '</span>';
             },
         },
     });
